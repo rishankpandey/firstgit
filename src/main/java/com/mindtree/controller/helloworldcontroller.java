@@ -1,5 +1,6 @@
 package com.mindtree.controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;  
@@ -11,10 +12,10 @@ public class helloworldcontroller {
 	return "Hello world";  
 	}  
 	
-	@PostMapping("/post")
-	public String hellopost()
+	@PostMapping("/post/{name}")
+	public String hellopost(@PathVariable("name") String name)
 	{
-		return "Hello world on Post Request";
+		return "Hello "+ name;
 	}
 	
 
